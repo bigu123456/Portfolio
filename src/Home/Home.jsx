@@ -1,17 +1,9 @@
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 
-
-
-const Home = () => {
+const Home = ({ darkMode }) => {
   return (
     <>
-      <Navbar />
-     
-      <Hero />
-      <Footer/>
-     
+      <Hero darkMode={darkMode} />
     </>
   );
 };
