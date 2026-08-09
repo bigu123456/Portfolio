@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 import Navbar from "./components/Navbar";
@@ -28,30 +27,32 @@ function App() {
 
       {/* Main Content */}
       <main>
+
         {/* Home */}
-        <section id="home">
+        <section id="home" className="scroll-mt-20">
           <Hero darkMode={darkMode} />
         </section>
 
         {/* About */}
-        <section id="about">
+        <section id="about" className="scroll-mt-20">
           <About darkMode={darkMode} />
         </section>
 
         {/* Skills */}
-        <section id="skills">
+        <section id="skills" className="scroll-mt-20">
           <Skills darkMode={darkMode} />
         </section>
 
         {/* Projects */}
-        <section id="projects">
+        <section id="projects" className="scroll-mt-20">
           <Projects darkMode={darkMode} />
         </section>
 
         {/* Contact */}
-        <section id="contact">
+        <section id="contact" className="scroll-mt-20">
           <Contact darkMode={darkMode} />
         </section>
+
       </main>
 
       {/* Footer */}
@@ -61,4 +62,3 @@ function App() {
 }
 
 export default App;
-

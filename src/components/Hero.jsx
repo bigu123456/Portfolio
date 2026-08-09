@@ -21,9 +21,9 @@ const Hero = ({ darkMode }) => {
 
           {/* Left Side */}
           <div>
-            <span className="inline-block bg-cyan-500/10 text-cyan-400 px-4 py-2 rounded-full text-sm mb-5">
+            {/* <span className="inline-block bg-cyan-500/10 text-cyan-400 px-4 py-7 rounded-full text-sm mb-5">
               Available for Frontend Opportunities
-            </span>
+            </span> */}
 
             <p
               className={`text-xl ${
