@@ -1,7 +1,6 @@
 import bigyan from "../image/bigyan.jpg";
 import {
-  FaGithub,
-  FaLinkedin,
+
   FaArrowRight,
   FaDownload,
   FaReact,
@@ -233,54 +232,14 @@ const Hero = ({ darkMode }) => {
                     : "text-gray-500"
                 }`}
               >
-                Connect with me
+               
               </span>
 
               {/* GitHub */}
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`
-                  w-11 h-11
-                  flex items-center justify-center
-                  rounded-xl
-                  border
-                  text-xl
-                  transition-all duration-300
-                  hover:-translate-y-1
-                  ${
-                    darkMode
-                      ? "border-gray-800 bg-gray-900 text-gray-400 hover:border-cyan-500 hover:text-cyan-400"
-                      : "border-gray-300 bg-gray-50 text-gray-600 hover:border-cyan-500 hover:text-cyan-600"
-                  }
-                `}
-              >
-                <FaGithub />
-              </a>
+              
 
               {/* LinkedIn */}
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`
-                  w-11 h-11
-                  flex items-center justify-center
-                  rounded-xl
-                  border
-                  text-xl
-                  transition-all duration-300
-                  hover:-translate-y-1
-                  ${
-                    darkMode
-                      ? "border-gray-800 bg-gray-900 text-gray-400 hover:border-cyan-500 hover:text-cyan-400"
-                      : "border-gray-300 bg-gray-50 text-gray-600 hover:border-cyan-500 hover:text-cyan-600"
-                  }
-                `}
-              >
-                <FaLinkedin />
-              </a>
+             
 
             </div>
 

@@ -1,4 +1,4 @@
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import {  FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = ({ darkMode }) => {
   const projects = [
@@ -257,7 +257,7 @@ const Projects = ({ darkMode }) => {
                   </a>
 
                   {/* GitHub */}
-                  <a
+                  {/* <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -281,16 +281,10 @@ const Projects = ({ darkMode }) => {
                       }
                     `}
                   >
-                    GitHub
+                 
 
-                    <FaGithub
-                      className="
-                        text-base
-                        transition-transform duration-300
-                        group-hover/btn:rotate-12
-                      "
-                    />
-                  </a>
+                    
+                  </a> */}
 
                 </div>
 

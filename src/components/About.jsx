@@ -38,44 +38,68 @@ const About = ({ darkMode }) => {
 
   return (
     <section
-      className={`relative min-h-screen py-24 overflow-hidden transition-all duration-500 ${
+      id="about"
+      className={`relative min-h-screen pt-16 pb-24 overflow-hidden transition-all duration-500 ${
         darkMode
           ? "bg-black text-white"
           : "bg-white text-black"
       }`}
     >
-      {/* ================= BACKGROUND EFFECTS ================= */}
+      {/* ================= FULL SECTION BACKGROUND ================= */}
 
       <div className="absolute inset-0 pointer-events-none">
 
-        {/* Cyan Glow */}
+        {/* LEFT CYAN GLOW */}
+
         <div
-          className={`absolute top-20 left-0 w-80 h-80 rounded-full blur-3xl ${
+          className={`absolute -top-20 -left-20 w-96 h-96 rounded-full blur-3xl ${
             darkMode
               ? "bg-cyan-500/10"
               : "bg-cyan-500/5"
           }`}
         />
 
+        {/* RIGHT BLUE GLOW */}
+
         <div
-          className={`absolute bottom-10 right-0 w-96 h-96 rounded-full blur-3xl ${
+          className={`absolute top-1/3 -right-20 w-96 h-96 rounded-full blur-3xl ${
             darkMode
               ? "bg-blue-500/10"
               : "bg-blue-500/5"
           }`}
         />
 
-        {/* Grid */}
-        {darkMode && (
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#06b6d4 1px, transparent 1px), linear-gradient(90deg, #06b6d4 1px, transparent 1px)",
-              backgroundSize: "50px 50px",
-            }}
-          />
-        )}
+        {/* BOTTOM GLOW */}
+
+        <div
+          className={`absolute -bottom-40 left-1/3 w-96 h-96 rounded-full blur-3xl ${
+            darkMode
+              ? "bg-cyan-500/5"
+              : "bg-cyan-500/5"
+          }`}
+        />
+
+        {/* ================= GRID ================= */}
+
+        <div
+          className={`absolute inset-0 ${
+            darkMode
+              ? "opacity-[0.045]"
+              : "opacity-[0.035]"
+          }`}
+          style={{
+            backgroundImage: darkMode
+              ? `
+                linear-gradient(rgba(6,182,212,0.8) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6,182,212,0.8) 1px, transparent 1px)
+              `
+              : `
+                linear-gradient(rgba(6,182,212,0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6,182,212,0.5) 1px, transparent 1px)
+              `,
+            backgroundSize: "50px 50px",
+          }}
+        />
 
       </div>
 
@@ -85,23 +109,71 @@ const About = ({ darkMode }) => {
 
         {/* ================= HEADER ================= */}
 
-        <div className="text-center mb-16">
+        <div className="mb-14">
 
-          <p className="text-cyan-500 font-semibold tracking-[0.3em] uppercase text-sm mb-3">
-            Get To Know Me
-          </p>
+          <div className="grid lg:grid-cols-3 items-center gap-6">
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            About{" "}
-            <span className="text-cyan-500">
-              Me
-            </span>
-          </h1>
+            {/* LEFT */}
 
-          <div className="w-24 h-1 bg-cyan-500 mx-auto mt-5 rounded-full" />
+            <div className="hidden lg:flex items-center gap-4">
+
+              <div className="w-12 h-px bg-cyan-500" />
+
+              <span
+                className={`text-sm tracking-[0.25em] uppercase ${
+                  darkMode
+                    ? "text-gray-500"
+                    : "text-gray-400"
+                }`}
+              >
+                01 / About
+              </span>
+
+            </div>
+
+            {/* CENTER */}
+
+            <div className="text-center">
+
+              <p className="text-cyan-500 font-semibold tracking-[0.3em] uppercase text-sm mb-3">
+                Get To Know Me
+              </p>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                About{" "}
+                <span className="text-cyan-500">
+                  Me
+                </span>
+              </h1>
+
+              <div className="w-20 h-1 bg-cyan-500 mx-auto mt-5 rounded-full" />
+
+            </div>
+
+            {/* RIGHT */}
+
+            <div className="hidden lg:flex justify-end items-center gap-4">
+
+              <span
+                className={`text-sm tracking-[0.2em] uppercase ${
+                  darkMode
+                    ? "text-gray-500"
+                    : "text-gray-400"
+                }`}
+              >
+                React • UI • Web
+              </span>
+
+              <div className="w-12 h-px bg-cyan-500" />
+
+            </div>
+
+          </div>
+
+          {/* DESCRIPTION */}
 
           <p
-            className={`max-w-2xl mx-auto mt-6 text-lg leading-8 ${
+            className={`max-w-3xl mx-auto mt-6 text-center text-lg leading-8 ${
               darkMode
                 ? "text-gray-400"
                 : "text-gray-600"
@@ -128,6 +200,7 @@ const About = ({ darkMode }) => {
               </div>
 
               <div>
+
                 <p className="text-sm text-gray-500">
                   Who I Am
                 </p>
@@ -135,15 +208,19 @@ const About = ({ darkMode }) => {
                 <h2 className="text-2xl font-bold">
                   Bigyan Acharya
                 </h2>
+
               </div>
 
             </div>
 
             <h3 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+
               Turning ideas into{" "}
+
               <span className="text-cyan-500">
                 interactive experiences.
               </span>
+
             </h3>
 
             <p
@@ -186,19 +263,19 @@ const About = ({ darkMode }) => {
               meaningful and high-quality web applications.
             </p>
 
-            {/* Mini Stats */}
+            {/* STATS */}
 
             <div className="grid grid-cols-3 gap-4 mt-8">
 
               <div
                 className={`p-4 rounded-xl border text-center transition-all duration-300 hover:-translate-y-2 ${
                   darkMode
-                    ? "bg-gray-900/70 border-gray-800 hover:border-cyan-500"
-                    : "bg-gray-50 border-gray-200 hover:border-cyan-500"
+                    ? "bg-gray-900/80 border-gray-800 hover:border-cyan-500"
+                    : "bg-white/90 border-gray-200 hover:border-cyan-500"
                 }`}
               >
                 <h4 className="text-2xl font-bold text-cyan-500">
-                  3+
+                  5+
                 </h4>
 
                 <p className="text-xs text-gray-500 mt-1">
@@ -209,8 +286,8 @@ const About = ({ darkMode }) => {
               <div
                 className={`p-4 rounded-xl border text-center transition-all duration-300 hover:-translate-y-2 ${
                   darkMode
-                    ? "bg-gray-900/70 border-gray-800 hover:border-cyan-500"
-                    : "bg-gray-50 border-gray-200 hover:border-cyan-500"
+                    ? "bg-gray-900/80 border-gray-800 hover:border-cyan-500"
+                    : "bg-white/90 border-gray-200 hover:border-cyan-500"
                 }`}
               >
                 <h4 className="text-2xl font-bold text-cyan-500">
@@ -225,8 +302,8 @@ const About = ({ darkMode }) => {
               <div
                 className={`p-4 rounded-xl border text-center transition-all duration-300 hover:-translate-y-2 ${
                   darkMode
-                    ? "bg-gray-900/70 border-gray-800 hover:border-cyan-500"
-                    : "bg-gray-50 border-gray-200 hover:border-cyan-500"
+                    ? "bg-gray-900/80 border-gray-800 hover:border-cyan-500"
+                    : "bg-white/90 border-gray-200 hover:border-cyan-500"
                 }`}
               >
                 <h4 className="text-2xl font-bold text-cyan-500">
@@ -242,24 +319,15 @@ const About = ({ darkMode }) => {
 
           </div>
 
-          {/* RIGHT - JOURNEY CARD */}
+          {/* ================= JOURNEY ================= */}
 
           <div
-            className={`
-              relative p-8 rounded-2xl border
-              transition-all duration-500
-              hover:-translate-y-2
-              ${
-                darkMode
-                  ? "bg-gray-900/70 border-gray-800 hover:border-cyan-500/50"
-                  : "bg-gray-50 border-gray-200 hover:border-cyan-500/50"
-              }
-            `}
+            className={`relative p-8 rounded-2xl border transition-all duration-500 hover:-translate-y-2 ${
+              darkMode
+                ? "bg-gray-900/85 border-gray-800 hover:border-cyan-500"
+                : "bg-white/90 border-gray-200 hover:border-cyan-500"
+            }`}
           >
-
-            {/* Glow */}
-
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl" />
 
             <div className="flex items-center gap-4 mb-8">
 
@@ -281,19 +349,21 @@ const About = ({ darkMode }) => {
 
             </div>
 
-            {/* Timeline */}
-
             <div className="relative space-y-8">
-
-              {/* Line */}
 
               <div className="absolute left-3 top-3 bottom-3 w-px bg-cyan-500/30" />
 
-              {/* Item 1 */}
+              {/* 1 */}
 
               <div className="relative flex gap-6">
 
-                <div className="relative z-10 w-6 h-6 rounded-full bg-cyan-500 border-4 border-black flex-shrink-0" />
+                <div
+                  className={`relative z-10 w-6 h-6 rounded-full bg-cyan-500 border-4 flex-shrink-0 ${
+                    darkMode
+                      ? "border-gray-900"
+                      : "border-white"
+                  }`}
+                />
 
                 <div>
 
@@ -316,11 +386,17 @@ const About = ({ darkMode }) => {
 
               </div>
 
-              {/* Item 2 */}
+              {/* 2 */}
 
               <div className="relative flex gap-6">
 
-                <div className="relative z-10 w-6 h-6 rounded-full bg-cyan-500 border-4 border-black flex-shrink-0" />
+                <div
+                  className={`relative z-10 w-6 h-6 rounded-full bg-cyan-500 border-4 flex-shrink-0 ${
+                    darkMode
+                      ? "border-gray-900"
+                      : "border-white"
+                  }`}
+                />
 
                 <div>
 
@@ -344,11 +420,17 @@ const About = ({ darkMode }) => {
 
               </div>
 
-              {/* Item 3 */}
+              {/* 3 */}
 
               <div className="relative flex gap-6">
 
-                <div className="relative z-10 w-6 h-6 rounded-full bg-cyan-500 border-4 border-black flex-shrink-0" />
+                <div
+                  className={`relative z-10 w-6 h-6 rounded-full bg-cyan-500 border-4 flex-shrink-0 ${
+                    darkMode
+                      ? "border-gray-900"
+                      : "border-white"
+                  }`}
+                />
 
                 <div>
 
@@ -390,9 +472,20 @@ const About = ({ darkMode }) => {
             What I Do
           </h2>
 
+          <p
+            className={`max-w-2xl mx-auto mt-4 ${
+              darkMode
+                ? "text-gray-400"
+                : "text-gray-600"
+            }`}
+          >
+            I focus on creating fast, responsive, and maintainable
+            web applications with modern frontend technologies.
+          </p>
+
         </div>
 
-        {/* Services */}
+        {/* ================= SERVICES ================= */}
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
@@ -400,44 +493,14 @@ const About = ({ darkMode }) => {
 
             <div
               key={index}
-              className={`
-                group
-                relative
-                p-6
-                rounded-2xl
-                border
-                transition-all
-                duration-500
-                hover:-translate-y-3
-                ${
-                  darkMode
-                    ? "bg-gray-900/70 border-gray-800 hover:border-cyan-500"
-                    : "bg-gray-50 border-gray-200 hover:border-cyan-500"
-                }
-                hover:shadow-xl
-                hover:shadow-cyan-500/10
-              `}
+              className={`group relative p-6 rounded-2xl border transition-all duration-500 hover:-translate-y-3 ${
+                darkMode
+                  ? "bg-gray-900/85 border-gray-800 hover:border-cyan-500"
+                  : "bg-white/90 border-gray-200 hover:border-cyan-500"
+              } hover:shadow-xl hover:shadow-cyan-500/10`}
             >
 
-              {/* Icon */}
-
-              <div
-                className="
-                  w-14 h-14
-                  rounded-xl
-                  bg-cyan-500/10
-                  border border-cyan-500/20
-                  flex items-center justify-center
-                  text-cyan-500
-                  text-2xl
-                  mb-5
-                  transition-all
-                  duration-500
-                  group-hover:scale-110
-                  group-hover:bg-cyan-500
-                  group-hover:text-black
-                "
-              >
+              <div className="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-500 text-2xl mb-5 transition-all duration-500 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-black">
                 {service.icon}
               </div>
 
@@ -455,8 +518,6 @@ const About = ({ darkMode }) => {
                 {service.description}
               </p>
 
-              {/* Arrow */}
-
               <div className="mt-5 text-cyan-500 opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <FaRocket />
               </div>
@@ -464,6 +525,30 @@ const About = ({ darkMode }) => {
             </div>
 
           ))}
+
+        </div>
+
+        {/* ================= CTA ================= */}
+
+        <div className="text-center mt-20">
+
+          <p
+            className={`text-sm ${
+              darkMode
+                ? "text-gray-500"
+                : "text-gray-500"
+            }`}
+          >
+            Interested in working together?
+          </p>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-xl bg-cyan-500 text-white font-semibold hover:bg-cyan-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/20"
+          >
+            Let's Connect
+            <FaRocket />
+          </a>
 
         </div>
 
