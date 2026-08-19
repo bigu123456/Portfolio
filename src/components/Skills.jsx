@@ -41,64 +41,122 @@ const Skills = ({ darkMode }) => {
 
   return (
     <section
-      className={`min-h-screen py-20 transition-all duration-300 ${
+      id="skills"
+      className={`min-h-screen py-24 transition-all duration-500 ${
         darkMode
           ? "bg-black text-white"
           : "bg-white text-black"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <h1 className="text-5xl font-bold text-center text-cyan-500">
-          My Skills
-        </h1>
+        <div className="text-center max-w-3xl mx-auto">
 
-        {/* Description */}
-        <p
-          className={`text-center mt-4 ${
-            darkMode
-              ? "text-gray-400"
-              : "text-gray-600"
-          }`}
-        >
-          Technologies and tools I use to build modern, responsive web
-          applications.
-        </p>
+          <p className="text-cyan-500 uppercase tracking-[0.3em] text-sm font-semibold">
+            My Expertise
+          </p>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mt-10">
+          <h1 className="text-4xl md:text-6xl font-bold mt-3">
+            Skills &{" "}
+            <span className="text-cyan-500">
+              Technologies
+            </span>
+          </h1>
+
+          <p
+            className={`mt-6 text-lg ${
+              darkMode
+                ? "text-gray-400"
+                : "text-gray-600"
+            }`}
+          >
+            Technologies and tools I use to build modern,
+            responsive and user-friendly web applications.
+          </p>
+
+        </div>
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 gap-8 mt-16">
+
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className={`rounded-xl p-6 border transition-all duration-300 ${
+              className={`group rounded-2xl p-7 border transition-all duration-300 hover:-translate-y-2 ${
                 darkMode
-                  ? "bg-gray-900 border-gray-700 hover:border-cyan-500"
-                  : "bg-white border-gray-200 shadow-md hover:border-cyan-400 hover:shadow-lg"
+                  ? "bg-gray-900 border-gray-800 hover:border-cyan-500"
+                  : "bg-white border-gray-200 shadow-lg hover:border-cyan-400 hover:shadow-xl"
               }`}
             >
-              {/* Category Title */}
-              <h2 className="text-2xl font-bold text-cyan-400 mb-5">
-                {category.title}
-              </h2>
+
+              {/* Category */}
+              <div className="mb-7">
+
+                <h2 className="text-2xl font-bold text-cyan-500">
+                  {category.title}
+                </h2>
+
+                <div className="w-12 h-1 bg-cyan-500 mt-3 rounded-full" />
+
+              </div>
 
               {/* Skills */}
-              <div className="flex flex-wrap gap-3">
+              <div className="space-y-5">
+
                 {category.skills.map((skill, i) => (
-                  <span
-                    key={i}
-                    className={`px-4 py-2 rounded-full border transition-all duration-300 ${
-                      darkMode
-                        ? "bg-gray-800 border-gray-700 text-gray-200 hover:bg-cyan-500 hover:text-black hover:border-cyan-500"
-                        : "bg-cyan-50 border-cyan-200 text-gray-800 hover:bg-cyan-500 hover:text-white hover:border-cyan-500"
-                    }`}
-                  >
-                    {skill}
-                  </span>
+                  <div key={i}>
+
+                    <div className="flex justify-between mb-2">
+
+                      <span className="font-medium">
+                        {skill}
+                      </span>
+
+                      <span className="text-cyan-500 text-sm">
+                        {90 - i * 3}%
+                      </span>
+
+                    </div>
+
+                    <div
+                      className={`h-2 rounded-full ${
+                        darkMode
+                          ? "bg-gray-800"
+                          : "bg-gray-200"
+                      }`}
+                    >
+                      <div
+                        className="h-2 bg-cyan-500 rounded-full transition-all duration-700"
+                        style={{
+                          width: `${90 - i * 3}%`,
+                        }}
+                      />
+                    </div>
+
+                  </div>
                 ))}
+
               </div>
+
             </div>
           ))}
+
+        </div>
+
+        {/* Bottom */}
+        <div className="text-center mt-16">
+
+          <p
+            className={`text-sm ${
+              darkMode
+                ? "text-gray-500"
+                : "text-gray-500"
+            }`}
+          >
+            Always learning. Always building. Always improving.
+          </p>
+
         </div>
 
       </div>
