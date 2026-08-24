@@ -2,7 +2,7 @@ import bigyan from "../image/bigyan.jpg";
 import {
 
   FaArrowRight,
-  FaDownload,
+
   FaReact,
   FaJs,
 } from "react-icons/fa";
@@ -198,7 +198,7 @@ const Hero = ({ darkMode }) => {
               </button>
 
               {/* Download CV */}
-              <a
+              {/* <a
                 href="/Bigyan-Acharya-CV.pdf"
                 download
                 className={`
@@ -218,7 +218,7 @@ const Hero = ({ darkMode }) => {
               >
                 <FaDownload />
                 Download CV
-              </a>
+              </a> */}
 
             </div>
 

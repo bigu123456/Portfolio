@@ -77,11 +77,14 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             {darkMode ? "☀️" : "🌙"}
           </button>
 
-          {/* Resume */}
-          <button className="bg-cyan-500 text-white px-5 py-2 rounded-lg hover:bg-cyan-600 transition">
-            Resume
-          </button>
-
+         <a
+  href={`${import.meta.env.BASE_URL}Bigyan_Acharya_Resume.pdf`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-cyan-500 text-white px-5 py-2 rounded-lg hover:bg-cyan-600 transition"
+>
+  Resume
+</a>
         </div>
       </div>
     </nav>

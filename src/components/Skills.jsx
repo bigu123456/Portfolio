@@ -42,7 +42,7 @@ const Skills = ({ darkMode }) => {
   return (
     <section
       id="skills"
-      className={`min-h-screen py-24 transition-all duration-500 ${
+      className={`min-h-screen py-5 transition-all duration-500 ${
         darkMode
           ? "bg-black text-white"
           : "bg-white text-black"
