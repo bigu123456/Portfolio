@@ -14,6 +14,7 @@ const Hero = ({ darkMode }) => {
     });
   };
 
+
   return (
     <section
       className={`relative min-h-screen flex items-center overflow-hidden transition-all duration-500 ${
