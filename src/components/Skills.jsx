@@ -77,7 +77,7 @@ const Skills = ({ darkMode }) => {
 
         </div>
 
-        {/* Cards */}
+        {/* Skill Cards */}
         <div className="grid md:grid-cols-2 gap-8 mt-16">
 
           {skillCategories.map((category, index) => (
@@ -102,39 +102,19 @@ const Skills = ({ darkMode }) => {
               </div>
 
               {/* Skills */}
-              <div className="space-y-5">
+              <div className="flex flex-wrap gap-3">
 
                 {category.skills.map((skill, i) => (
-                  <div key={i}>
-
-                    <div className="flex justify-between mb-2">
-
-                      <span className="font-medium">
-                        {skill}
-                      </span>
-
-                      <span className="text-cyan-500 text-sm">
-                        {90 - i * 3}%
-                      </span>
-
-                    </div>
-
-                    <div
-                      className={`h-2 rounded-full ${
-                        darkMode
-                          ? "bg-gray-800"
-                          : "bg-gray-200"
-                      }`}
-                    >
-                      <div
-                        className="h-2 bg-cyan-500 rounded-full transition-all duration-700"
-                        style={{
-                          width: `${90 - i * 3}%`,
-                        }}
-                      />
-                    </div>
-
-                  </div>
+                  <span
+                    key={i}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-300 hover:scale-105 ${
+                      darkMode
+                        ? "bg-gray-800 border-gray-700 text-gray-200 hover:border-cyan-500 hover:text-cyan-400"
+                        : "bg-gray-50 border-gray-200 text-gray-700 hover:border-cyan-400 hover:text-cyan-600"
+                    }`}
+                  >
+                    {skill}
+                  </span>
                 ))}
 
               </div>
@@ -147,13 +127,7 @@ const Skills = ({ darkMode }) => {
         {/* Bottom */}
         <div className="text-center mt-16">
 
-          <p
-            className={`text-sm ${
-              darkMode
-                ? "text-gray-500"
-                : "text-gray-500"
-            }`}
-          >
+          <p className="text-sm text-gray-500">
             Always learning. Always building. Always improving.
           </p>
 
